@@ -1,25 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Game from "./GameList";
+import Screenshots from "./Screenshots";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <NavLink exact to="/" activeClassName="active">
+                Home
+              </NavLink>
+            </li>
+            {/* <li>
+              <NavLink to="/screenshots" activeClassName="active">
+                Screenshots
+              </NavLink>
+            </li> */}
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/screenshots/:id" component={Screenshots} />
+
+          <Route exact path="/" component={Game}>
+            <Game />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
