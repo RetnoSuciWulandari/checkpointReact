@@ -30,9 +30,9 @@ class Game extends React.Component {
                   Screenshots
                 </button> */}
                 <Link
-                  onClick={() =>
-                    this.props.displayScreenshots(data.short_screenshots)
-                  }
+                  //   onClick={() =>
+                  //     this.props.displayScreenshots(data.short_screenshots)
+                  //   }
                   to={`/screenshots/${data.id}`}
                   screenshots={this.props.screenshots}
                 >

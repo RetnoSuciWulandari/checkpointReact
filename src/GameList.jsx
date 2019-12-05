@@ -98,9 +98,13 @@ class GameList extends React.Component {
               </Route>
               <Route
                 path="/screenshots/:id"
-                render={props => (
-                  <Screenshots {...props} data={this.state.data} />
-                )}
+                render={props =>
+                  this.state.data.length > 0 ? (
+                    <Screenshots {...props} data={this.state.data} />
+                  ) : (
+                    <div>Loading</div>
+                  )
+                }
               />
             </Switch>
           </div>
