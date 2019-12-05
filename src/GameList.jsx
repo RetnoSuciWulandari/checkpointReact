@@ -86,13 +86,14 @@ class GameList extends React.Component {
             </nav>
 
             <Switch>
-              <Route exact path="/" component={Game}>
+              <Route exact path="/">
                 <Game
                   data={this.state.data}
                   deleteGame={this.deleteGame}
                   displayScreenshots={this.displayScreenshots}
                   bestGames={this.state.bestGames}
                   handleClick={this.handleClick}
+                  screenshots={this.state.screenshots}
                 />
               </Route>
               <Route

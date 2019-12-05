@@ -34,6 +34,7 @@ class Game extends React.Component {
                     this.props.displayScreenshots(data.short_screenshots)
                   }
                   to={`/screenshots/${data.id}`}
+                  screenshots={this.props.screenshots}
                 >
                   Screenshots
                 </Link>
